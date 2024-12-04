@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "lint": "eslint src/**/*.ts",
+    "start": "node dist/server.js",
     "build": "tsc",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier . --write",

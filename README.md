@@ -20,17 +20,12 @@ The project is live and can be accessed here:
 
 
 ## Installation
-1. Clone the repository:  
-
-```bash
-   git clone https://github.com/solaiman-siam/apollo-b4-a2.git
-
+1. Clone the repository: git clone https://github.com/solaiman-siam/apollo-b4-a2.git
 2. cd project
 3. npm install
 
 ## Usage
 Start the application:
-```bash
 npm run dev
 
 ## Contact

@@ -1,5 +1,5 @@
-import { error } from "console";
 import Product from "../product/product.model";
+import { IOrder } from "./order.interface";
 import Order from "./order.model"
 
 

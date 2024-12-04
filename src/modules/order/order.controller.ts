@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { orderService } from "./order.service"
-
+import { Error } from "mongoose"
 
 const createOrder = async (req: Request, res:Response) => {
     try{
@@ -11,13 +11,13 @@ const createOrder = async (req: Request, res:Response) => {
             status: true,
             data: result
         })
-
-    }catch(err : any) {
+    }catch(err : unknown) {
+        const error = err as Error;
         res.status(400).json({
-            message: err.message,
+            message: error.message,
             success: false,
-            error: err,
-            stack: err.stack
+            error: error,
+            stack: error.stack
         })
     }
 }
@@ -31,12 +31,13 @@ const getRevenue = async (req: Request, res:Response) => {
                 totalRevenue: result
             }
         })
-    }catch(err : any) {
+    }catch(err : unknown) {
+        const error = err as Error;
         res.status(400).json({
-            message: err.message,
+            message: error.message,
             success: false,
-            error: err,
-            stack: err.stack
+            error: error,
+            stack: error.stack
         })
     }
 }

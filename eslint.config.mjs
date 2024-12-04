@@ -14,7 +14,7 @@ export default [
     rules: {
       "no-unused-vars": "error",
       "no-undef": "error",
-      "no-unuser-expressions": "error",
+      "no-unused-expressions": "error",
       "prefer-const": "error",
       "no-console": "warn",
     },

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Product from "./product.model";
 import { productService } from "./product.service";
+import { Error } from "mongoose";
 
 
 const createProduct = async (req: Request, res:Response) => {
@@ -12,12 +12,13 @@ const createProduct = async (req: Request, res:Response) => {
             success: true,
             data: result
         })
-      }catch(err : any) {
-        res.json({
-          message: err.message,
+      }catch(err : unknown) {
+        const error = err as Error;
+        res.status(400).json({
+          message: error.message,
           success: false,
-          error: err,
-          stack: err.stack
+          error: error,
+          stack: error.stack
         })
       }
 }
@@ -30,12 +31,13 @@ const getAllProduct = async (req: Request, res:Response) => {
             status: true,
             data: result
         })
-      }catch(err : any) {
-        res.json({
-          message: err.message,
+      }catch(err : unknown) {
+        const error = err as Error;
+        res.status(400).json({
+          message: error.message,
           success: false,
           error: err,
-          stack: err.stack
+          stack: error.stack
         })
       }
 }
@@ -48,12 +50,13 @@ const getSingleProduct = async (req: Request, res:Response) => {
             status: true,
             data: result
         })
-      }catch(err: any) {
-        res.json({
-          message: err.message,
+      }catch(err: unknown) {
+        const error = err as Error;
+        res.status(400).json({
+          message: error.message,
           success: false,
-          error: err,
-          stack: err.stack
+          error: error,
+          stack: error.stack
         })
       }
 }
@@ -67,31 +70,33 @@ const updateProduct = async (req: Request, res:Response) => {
             status: true,
             data: result
         })
-      }catch(err : any) {
-        res.json({
-          message: err.message,
+      }catch(err : unknown) {
+        const error = err as Error;
+        res.status(400).json({
+          message: error.message,
           success: false,
-          error: err,
-          stack: err.stack
+          error: error,
+          stack: error.stack
         })
       }
 }
 const deleteProduct = async (req: Request, res:Response) => {
       try{
         const {productId} = req.params
-        const result = await productService.deleteProduct(productId)
+        await productService.deleteProduct(productId)
         res.json({
             message: 'Bicycles deleted successfully',
             status: true,
             data: {}
         })
 
-      }catch(err : any) {
-        res.json({
-          message: err.message,
+      }catch(err : unknown) {
+        const error = err as Error;
+        res.status(400).json({
+          message: error.message,
           success: false,
-          error: err,
-          stack: err.stack
+          error: error,
+          stack: error.stack
         })
       }
 }

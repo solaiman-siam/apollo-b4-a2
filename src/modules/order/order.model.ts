@@ -10,12 +10,15 @@ const orderSchema = new Schema({
     },
     product: {
         type: String,
+        required: true
     },
     quantity: {
-        type: Number
+        type: Number,
+        required: true
     },
     totalPrice : {
-        type: Number
+        type: Number,
+        required: true
     },
     createdAt: {
         type: Date,

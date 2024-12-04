@@ -1,4 +1,3 @@
-import { Aggregate } from "mongoose"
 import IProduct from "./product.interface"
 import Product from "./product.model"
 
@@ -8,7 +7,6 @@ const createProduct = async (payload: IProduct ) => {
     return result
 }
 const getAllProduct = async ( searchTerm : string | string[] | undefined) => {
-
     const query = searchTerm
         ? {
             $or: [
@@ -20,7 +18,6 @@ const getAllProduct = async ( searchTerm : string | string[] | undefined) => {
         : {}; // Empty query to fetch all documents
     
         const result = await Product.find(query)
-
         return result
     
 }

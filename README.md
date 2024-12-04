@@ -1,11 +1,13 @@
 # By-Cycle Store
 This is a bicycle store application designed to streamline store management and enhance user experience. The application allows the store owner to efficiently manage products by adding, updating, and deleting them. Users can browse and place orders for bicycles seamlessly. Additionally, the owner has access to a comprehensive view of all orders and tracks total revenue in real time, ensuring smooth operations and better business insights.
 
-# Live Link
+
+## Live Link
 The project is live and can be accessed here:  
 [https://apollo-b4-a2-eoyg.vercel.app/](https://apollo-b4-a2-eoyg.vercel.app/) (Hosted on Vercel)
 
-# Video Explanation 
+
+## Video Explanation 
 For better understanding I've created a video here: 
 [https://app.usebubbles.com/q4r2FArUTDpgnYvKE9rH62/b4-a2-project-overview](https://app.usebubbles.com/q4r2FArUTDpgnYvKE9rH62/b4-a2-project-overview)
 
